@@ -1,0 +1,59 @@
+class Member:
+    def __init__(self, name, username, password):
+        self.name = name
+        self.username = username
+        self.password = password
+
+    def display(self):
+        print(f"회원 이름 : {self.name} 회원 아이디 : {self.username}")
+
+    def __repr__(self):
+        return f"{self.name}님의 회원정보"
+
+class Post:
+    def __init__(self, title, content, author):
+        self.title = title
+        self.content = content
+        self.author = author
+
+    def __repr__(self):
+        return f"{self.author} 작성 : {self.title}  {self.content}"
+
+members = []
+
+m1 = Member('회원1', 'abc', '123')
+m2 = Member('회원2', 'def', '123')
+m3 = Member('회원3', 'ghi', '123')
+
+members.append(m1)
+members.append(m2)
+members.append(m3)
+
+posts = []
+
+for member in members:
+    print(member.name)
+
+p1 = Post('1번 포스트', '1-1', m1.name)
+p2 = Post('2번 포스트', '2-1', m1.name)
+p3 = Post('3번 포스트', '3-1', m1.name)
+posts.append(p1)
+posts.append(p2)
+posts.append(p3)
+
+p4 = Post('4번 포스트', '4-1', m2.name)
+p5 = Post('5번 포스트', '5-1', m2.name)
+p6 = Post('6번 포스트', '6-1', m2.name)
+posts.append(p4)
+posts.append(p5)
+posts.append(p6)
+
+p7 = Post('7번 포스트', '7-1', m3.name)
+p8 = Post('8번 포스트', '8-1', m3.name)
+p9 = Post('9번 포스트', '9-1', m3.name)
+posts.append(p7)
+posts.append(p8)
+posts.append(p9)
+
+for post in posts:
+    print(post, "\n")
